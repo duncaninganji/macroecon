@@ -6,4 +6,112 @@
   android:layout_height="match_parent"
   tools:context=".GraphActivity">
 
+  <Spinner
+    android:id="@+id/countrySpinner"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="32dp"
+    android:layout_marginEnd="32dp"
+    android:entries="@array/countries"
+    android:minHeight="48dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/annotationButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:text="@string/annotation"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/startYearLayout"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="32dp"
+    app:layout_constraintStart_toEndOf="@+id/startYearText"
+    app:layout_constraintTop_toBottomOf="@+id/countrySpinner">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/start"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="hint" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <TextView
+    android:id="@+id/startYearText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="48dp"
+    android:text="@string/start"
+    android:textSize="20sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/countrySpinner" />
+
+  <TextView
+    android:id="@+id/endYearText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="48dp"
+    android:text="@string/end"
+    android:textSize="20sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/startYearText" />
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/endYearLayout"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="41dp"
+    android:layout_marginTop="24dp"
+    app:layout_constraintStart_toEndOf="@+id/endYearText"
+    app:layout_constraintTop_toBottomOf="@+id/startYearLayout">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/end"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="hint" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <Button
+    android:id="@+id/apply"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="@string/apply"
+    android:onClick="onApply"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/endYearLayout" />
+
+  <LinearLayout
+    android:id="@+id/graphLayout"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toTopOf="@+id/annotationButton"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/apply">
+
+    <com.jjoe64.graphview.GraphView
+      android:id="@+id/idGraphView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_alignParentTop="true" />
+  </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

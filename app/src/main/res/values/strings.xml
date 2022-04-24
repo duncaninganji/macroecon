@@ -1,3 +1,21 @@
 <resources>
   <string name="app_name">MacroEcon Researcher</string>
+  <string name="app_home_header"> Welcome to the MacroEconomic Food Security App</string>
+  <string name="researcher"> Researcher</string>
+  <string name="gov">Govt Official</string>
+  <string name="gdp">GDP</string>
+  <string name="fdi_inf">FDI Inflow</string>
+  <string name="fdi_outf">FDI Outflow</string>
+  <string name="ie_flow">Import/Export Flow</string>
+  <string name="country">Country</string>
+  <string name="show">Show</string>
+  <string-array name="countries">
+    <item>USA</item>
+    <item>China</item>
+    <item>India</item>
+  </string-array>
+  <string name="annotation">Annotation</string>
+  <string name="apply">Apply</string>
+  <string name="start">Start Year</string>
+  <string name="end">End Year</string>
 </resources>

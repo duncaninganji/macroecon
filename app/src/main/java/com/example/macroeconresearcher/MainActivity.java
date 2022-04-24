@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         String [] urls = {
                 "https://drive.google.com/uc?export=download&id=1M5sZrUHK-Q1iufT30CxioQfBuYcmAyfp"
         };
-//        downloadAsyncTask.execute(urls);
-//        createTable();
+        downloadAsyncTask.execute(urls);
+        createTable();
     }
 
     public void onClick(View view) {
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Logged in as Govt Official", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.researcherAvatar:
-                mode = "gov";
+                mode = "res";
                 Toast.makeText(this, "Logged in as Researcher", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.gdpIcon:
@@ -68,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(openFileInput(FILENAME)));
             while ((line = bufferedReader.readLine()) != null) {
                 MacroEconomicRecord macroEconomicRecord = createRecord(line);
-                if (macroEconomicRecord != null) macroEconomicRecordViewModel.insert(macroEconomicRecord);
+                if (macroEconomicRecord == null) {
+                    Toast.makeText(this, "Null Record", Toast.LENGTH_SHORT).show();
+                } else {
+                    macroEconomicRecordViewModel.insert(macroEconomicRecord);
+                }
             }
-            Toast.makeText(
-                    this,
-                    "DB Synced",
-                    Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException fileNotFoundException) {
             Toast.makeText(
                     this,

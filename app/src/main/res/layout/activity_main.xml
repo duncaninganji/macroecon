@@ -7,12 +7,99 @@
   tools:context=".MainActivity">
 
   <TextView
+    android:id="@+id/welcome"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginEnd="32dp"
+    android:background="#673AB7"
+    android:text="@string/app_home_header"
+    android:textAlignment="center"
+    android:textColor="#FFFFFF"
+    android:textSize="27sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+    android:id="@+id/govtAvatar"
+    android:layout_width="128dp"
+    android:layout_height="128dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="128dp"
+    android:onClick="onClick"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/welcome"
+    app:srcCompat="@drawable/profile" />
+
+  <ImageView
+    android:id="@+id/researcherAvatar"
+    android:layout_width="128dp"
+    android:layout_height="128dp"
+    android:layout_marginTop="128dp"
+    android:layout_marginEnd="32dp"
+    android:onClick="onClick"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/welcome"
+    app:srcCompat="@drawable/user" />
+
+  <TextView
+    android:id="@+id/govt"
+    android:layout_width="110dp"
+    android:layout_height="22dp"
+    android:layout_marginTop="32dp"
+    android:text="@string/gov"
+    android:textSize="20sp"
+    app:layout_constraintEnd_toEndOf="@+id/govtAvatar"
+    app:layout_constraintStart_toStartOf="@+id/govtAvatar"
+    app:layout_constraintTop_toBottomOf="@+id/govtAvatar" />
+
+  <TextView
+    android:id="@+id/researcher"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello World!"
+    android:layout_marginTop="32dp"
+    android:text="@string/researcher"
+    android:textSize="20sp"
+    app:layout_constraintEnd_toEndOf="@+id/researcherAvatar"
+    app:layout_constraintStart_toStartOf="@+id/researcherAvatar"
+    app:layout_constraintTop_toBottomOf="@+id/researcherAvatar" />
+
+  <ImageView
+    android:id="@+id/agricultureIcon"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:layout_marginBottom="32dp"
+    android:onClick="onClick"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintEnd_toStartOf="@+id/researcher"
+    app:layout_constraintStart_toEndOf="@+id/govt"
+    app:layout_constraintTop_toTopOf="@+id/gdpIcon"
+    app:srcCompat="@drawable/agronomy" />
+
+  <ImageView
+    android:id="@+id/gdpIcon"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginBottom="32dp"
+    android:onClick="onClick"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/agricultureIcon"
+    app:layout_constraintStart_toStartOf="parent"
+    app:srcCompat="@drawable/gdp" />
+
+  <ImageView
+    android:id="@+id/debtIcon"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginBottom="32dp"
+    android:onClick="onClick"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/agricultureIcon"
+    app:srcCompat="@drawable/debt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
