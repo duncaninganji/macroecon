@@ -6,53 +6,53 @@
   android:layout_height="match_parent"
   tools:context=".FilterActivity">
 
-  <CheckBox
-    android:id="@+id/gdpCheckBox"
-    android:layout_width="0dp"
+  <RadioButton
+    android:id="@+id/radioButton"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="64dp"
-    android:layout_marginTop="64dp"
-    android:layout_marginEnd="64dp"
-    android:text="@string/gdp"
+    android:text="GDP(USD)"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.142"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/countrySpinner" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.171" />
 
-  <CheckBox
-    android:id="@+id/fdiInfCheckbox"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="64dp"
-    android:layout_marginTop="32dp"
-    android:layout_marginEnd="64dp"
-    android:text="@string/fdi_inf"
+  <RadioButton
+    android:id="@+id/radioButton2"
+    android:layout_width="144dp"
+    android:layout_height="48dp"
+    android:text="FDI Inflows(USD)"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.167"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/gdpCheckBox" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.254" />
 
-  <CheckBox
-    android:id="@+id/fdiOutfCheckbox"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="64dp"
-    android:layout_marginTop="32dp"
-    android:layout_marginEnd="64dp"
-    android:text="@string/fdi_outf"
+  <RadioButton
+    android:id="@+id/radioButton3"
+    android:layout_width="143dp"
+    android:layout_height="48dp"
+    android:text="FDI Outflows(USD)"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.171"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/fdiInfCheckbox" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.334" />
 
-  <CheckBox
-    android:id="@+id/ieFlowCheckbox"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="64dp"
-    android:layout_marginTop="32dp"
-    android:layout_marginEnd="64dp"
-    android:text="@string/ie_flow"
+  <RadioButton
+    android:id="@+id/radioButton4"
+    android:layout_width="128dp"
+    android:layout_height="48dp"
+    android:text="Import/Export Flow"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.159"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/fdiOutfCheckbox" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.415" />
 
   <Button
     android:id="@+id/showButton"
@@ -63,7 +63,7 @@
     android:onClick="onShow"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/ieFlowCheckbox" />
+    app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
 
   <ImageView
     android:id="@+id/gdpIcon2"
@@ -109,11 +109,5 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
-
-  <RadioGroup
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:layout_editor_absoluteX="164dp"
-    tools:layout_editor_absoluteY="459dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

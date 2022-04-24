@@ -14,20 +14,24 @@ public class MacroEconomicRecordRepository {
         macroEconomicRecordDao = db.macroEconomicRecordDao();
     }
 
-    LiveData<List<MacroEconomicRecord>> filterGDPByCountryAndRange(String country, int start, int stop) {
+    List<MacroEconomicRecord> filterGDPByCountryAndRange(String country, int start, int stop) {
         return macroEconomicRecordDao.filterGDPByCountryAndRange(country, start, stop);
     }
 
-    LiveData<List<MacroEconomicRecord>> filterFDIInflowByCountryAndRange(String country, int start, int stop) {
+    List<MacroEconomicRecord> filterFDIInflowByCountryAndRange(String country, int start, int stop) {
         return macroEconomicRecordDao.filterFDIInflowByCountryAndRange(country, start, stop);
     }
 
-    LiveData<List<MacroEconomicRecord>> filterFDIOutflowByCountryAndRange(String country, int start, int stop) {
+    List<MacroEconomicRecord> filterFDIOutflowByCountryAndRange(String country, int start, int stop) {
         return macroEconomicRecordDao.filterFDIOutflowByCountryAndRange(country, start, stop);
     }
 
-    LiveData<List<MacroEconomicRecord>> filterImportExportFlowByCountryAndRange(String country, int start, int stop) {
+    List<MacroEconomicRecord> filterImportExportFlowByCountryAndRange(String country, int start, int stop) {
         return macroEconomicRecordDao.filterImportExportFlowByCountryAndRange(country, start, stop);
+    }
+
+    List<MacroEconomicRecord> getAll() {
+        return macroEconomicRecordDao.getAll();
     }
 
     void insert(MacroEconomicRecord macroEconomicRecord) {

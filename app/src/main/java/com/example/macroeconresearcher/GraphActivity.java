@@ -61,7 +61,8 @@ public class GraphActivity extends AppCompatActivity {
                 Toast.makeText(this, "Error! Range must be between 1960 and 2020", Toast.LENGTH_LONG).show();
             } else {
                 if (getIntent().getStringExtra("gdp") != null) {
-                    List<MacroEconomicRecord> gdp = macroEconomicRecordViewModel.filterGDPByCountryAndRange(country, start, stop).getValue();
+                    List<MacroEconomicRecord> gdp = macroEconomicRecordViewModel.filterGDPByCountryAndRange(country, start, stop);
+//                    List<MacroEconomicRecord> all = macroEconomicRecordViewModel.getAll();
                     if (gdp == null) {
                         Toast.makeText(this, "Error! Query returned null", Toast.LENGTH_SHORT).show();
                     }
